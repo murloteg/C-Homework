@@ -1,2 +1,1 @@
-# NSU
-test
+# C-Homework
