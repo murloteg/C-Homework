@@ -1,24 +1,23 @@
 #include <stdio.h>
+#include <assert.h>
 
-int sum_digit(int x)
+int SumDigit(int number)
 {
     int summa = 0;
-    while (x != 0)
+    while (number != 0)
     {
-        summa = summa + (x % 10);
-        x = x / 10;
+        summa += (number % 10);
+        number /= 10;
     }
+
     return summa;
 }
 
-int main()
+int main(void)
 {
-    int summa;
-    int input = 0;
-    printf("Введите целое число: ");
-    scanf("%d", &input);
-    summa = sum_digit(input);
-    printf("Сумма цифр вашего числа = %d", summa);
+    int number = 0;
+    assert(scanf("%d", &number) == 1);
+    printf("%d", SumDigit(number));
+
     return 0;
 }
-
